@@ -389,7 +389,7 @@ For example, your state may contain several independent variables:
   }
 ```
 
-Then you can update them independently with separate `setState()` calls:
+Then you can update them independently with separate `setState()` calls (here in equivelant arrow and regular function syntax):
 
 ```js{4,10}
   componentDidMount() {
@@ -399,11 +399,12 @@ Then you can update them independently with separate `setState()` calls:
       });
     });
 
-    fetchComments().then(response => {
-      this.setState({
-        comments: response.comments
-      });
+    fetchComments().then(function(response) {
+      return {
+        comments: response.comments  	
+      };
     });
+    
   }
 ```
 
